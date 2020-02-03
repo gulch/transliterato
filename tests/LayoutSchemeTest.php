@@ -2,7 +2,7 @@
 
 namespace gulch\Transliterato\Tests;
 
-use gulch\Transliterato\Processor\Transliterator;
+use gulch\Transliterato\Processor;
 use gulch\Transliterato\Scheme\EngToUkrKeyboardLayout;
 use gulch\Transliterato\Scheme\RusToUkrKeyboardLayout;
 use gulch\Transliterato\Scheme\UkrToEngKeyboardLayout;
@@ -13,7 +13,7 @@ class LayoutSchemeTest extends TestCase
 {
     public function testEngtoUkrLayoutScheme()
     {
-        $processor = new Transliterator(new EngToUkrKeyboardLayout());
+        $processor = new Processor(new EngToUkrKeyboardLayout());
 
         $this->assertSame(
             'йцукенгшщзхїфівапролджєячсмитьбю',
@@ -23,7 +23,7 @@ class LayoutSchemeTest extends TestCase
 
     public function testUkrToEngLayoutScheme()
     {
-        $processor = new Transliterator(new UkrToEngKeyboardLayout());
+        $processor = new Processor(new UkrToEngKeyboardLayout());
 
         $this->assertSame(
             'qwertyuiop[]asdfghjkl;\'zxcvbnm,.',
@@ -33,7 +33,7 @@ class LayoutSchemeTest extends TestCase
 
     public function testRusToUkrLayoutScheme()
     {
-        $processor = new Transliterator(new RusToUkrKeyboardLayout());
+        $processor = new Processor(new RusToUkrKeyboardLayout());
 
         $this->assertSame(
             'їіє',
@@ -43,7 +43,7 @@ class LayoutSchemeTest extends TestCase
 
     public function testUkrToRusLayoutScheme()
     {
-        $processor = new Transliterator(new UkrToRusKeyboardLayout());
+        $processor = new Processor(new UkrToRusKeyboardLayout());
 
         $this->assertSame(
             'ъыэ',
