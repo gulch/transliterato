@@ -10,5 +10,9 @@ class UkrToRusKeyboardLayout extends AbstractPatternScheme implements SchemeInte
         'і' => 'ы',
         'ї' => 'ъ',
         'є' => 'э',
+
+        'І' => 'Ы',
+        'Ї' => 'Ъ',
+        'Є' => 'Э',
     ];
 }

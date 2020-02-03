@@ -11,13 +11,13 @@ use PHPUnit\Framework\TestCase;
 
 class LayoutSchemeTest extends TestCase
 {
-    public function testEngtoUkrLayoutScheme()
+    public function testEngToUkrLayoutScheme()
     {
         $processor = new Processor(new EngToUkrKeyboardLayout());
 
         $this->assertSame(
-            'йцукенгшщзхїфівапролджєячсмитьбю',
-            $processor->process('qwertyuiop[]asdfghjkl;\'zxcvbnm,.')
+            'йЙцЦуУкКеЕнНгГшШщЩзЗхХїЇфФіІвВаАпПрРоОлЛдДжЖєЄяЯчЧсСмМиИтТьЬбБюЮ',
+            $processor->process('qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:\'"zZxXcCvVbBnNmM,<.>')
         );
     }
 
@@ -26,8 +26,8 @@ class LayoutSchemeTest extends TestCase
         $processor = new Processor(new UkrToEngKeyboardLayout());
 
         $this->assertSame(
-            'qwertyuiop[]asdfghjkl;\'zxcvbnm,.',
-            $processor->process('йцукенгшщзхїфівапролджєячсмитьбю')
+            'qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:\'"zZxXcCvVbBnNmM,<.>',
+            $processor->process('йЙцЦуУкКеЕнНгГшШщЩзЗхХїЇфФіІвВаАпПрРоОлЛдДжЖєЄяЯчЧсСмМиИтТьЬбБюЮ')
         );
     }
 
@@ -36,8 +36,8 @@ class LayoutSchemeTest extends TestCase
         $processor = new Processor(new RusToUkrKeyboardLayout());
 
         $this->assertSame(
-            'їіє',
-            $processor->process('ъыэ')
+            'їієЇІЄ',
+            $processor->process('ъыэЪЫЭ')
         );
     }
 
@@ -46,8 +46,8 @@ class LayoutSchemeTest extends TestCase
         $processor = new Processor(new UkrToRusKeyboardLayout());
 
         $this->assertSame(
-            'ъыэ',
-            $processor->process('їіє')
+            'ъыэЪЫЭ',
+            $processor->process('їієЇІЄ')
         );
     }
 }

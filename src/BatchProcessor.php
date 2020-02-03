@@ -22,11 +22,7 @@ class BatchProcessor
         $result = [];
 
         foreach ($this->schemes as $scheme) {
-            $result[] = \str_replace(
-                $scheme->getSearchData(),
-                $scheme->getReplaceData(),
-                $text
-            );
+            $result[] = (new Processor($scheme))->process($text);
         }
 
         return $result;
