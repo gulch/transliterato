@@ -41,6 +41,6 @@
             "@test"
         ],
         "test": "phpunit",
-        "phpcs": "phpcs -n --standard=PSR2 src && phpcs -n --standard=PSR2 tests"
+        "phpcs": "phpcs -n --standard=PSR12 src && phpcs -n --standard=PSR12 tests"
     }
 }
