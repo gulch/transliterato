@@ -1,0 +1,45 @@
+<?php
+
+namespace gulch\Transliterato\Scheme;
+
+use gulch\Transliterato\Contract\SchemeInterface;
+
+class UkrToEngKeyboardLayout extends AbstractPatternScheme implements SchemeInterface
+{
+    protected const PATTERN = [
+        'й' => 'q',
+        'ц' => 'w',
+        'у' => 'e',
+        'к' => 'r',
+        'е' => 't',
+        'н' => 'y',
+        'г' => 'u',
+        'ш' => 'i',
+        'щ' => 'o',
+        'з' => 'p',
+        'х' => '[',
+        'ї' => ']',
+
+        'ф' => 'a',
+        'і' => 's',
+        'в' => 'd',
+        'а' => 'f',
+        'п' => 'g',
+        'р' => 'h',
+        'о' => 'j',
+        'л' => 'k',
+        'д' => 'l',
+        'ж' => ';',
+        'є' => '\'',
+
+        'я' => 'z',
+        'ч' => 'x',
+        'с' => 'c',
+        'м' => 'v',
+        'и' => 'b',
+        'т' => 'n',
+        'ь' => 'm',
+        'б' => ',',
+        'ю' => '.',
+    ];
+}
