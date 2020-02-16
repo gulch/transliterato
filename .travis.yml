@@ -3,9 +3,13 @@ language: php
 php:
   - 7.4
 
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+
 before_script:
   - composer self-update
-  - composer install
+  - travis_retry composer update ${COMPOSER_FLAGS}
 
 script:
   - mkdir -p build/logs
