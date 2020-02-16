@@ -3,7 +3,9 @@
 namespace gulch\Transliterato\Tests;
 
 use gulch\Transliterato\Processor;
+use gulch\Transliterato\Scheme\EngToRusKeyboardLayout;
 use gulch\Transliterato\Scheme\EngToUkrKeyboardLayout;
+use gulch\Transliterato\Scheme\RusToEngKeyboardLayout;
 use gulch\Transliterato\Scheme\RusToUkrKeyboardLayout;
 use gulch\Transliterato\Scheme\UkrToEngKeyboardLayout;
 use gulch\Transliterato\Scheme\UkrToRusKeyboardLayout;
@@ -48,6 +50,26 @@ class LayoutSchemeTest extends TestCase
         $this->assertSame(
             'ъыэЪЫЭ',
             $processor->process('їієЇІЄ')
+        );
+    }
+
+    public function testEngToRusLayoutScheme()
+    {
+        $processor = new Processor(new EngToRusKeyboardLayout());
+
+        $this->assertSame(
+            'йЙцЦуУкКеЕнНгГшШщЩзЗхХъЪфФыЫвВаАпПрРоОлЛдДжЖэЭяЯчЧсСмМиИтТьЬбБюЮ',
+            $processor->process('qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:\'"zZxXcCvVbBnNmM,<.>')
+        );
+    }
+
+    public function testRusToEngLayoutScheme()
+    {
+        $processor = new Processor(new RusToEngKeyboardLayout());
+
+        $this->assertSame(
+            'qQwWeErRtTyYuUiIoOpP[{]}aAsSdDfFgGhHjJkKlL;:\'"zZxXcCvVbBnNmM,<.>',
+            $processor->process('йЙцЦуУкКеЕнНгГшШщЩзЗхХъЪфФыЫвВаАпПрРоОлЛдДжЖэЭяЯчЧсСмМиИтТьЬбБюЮ')
         );
     }
 }

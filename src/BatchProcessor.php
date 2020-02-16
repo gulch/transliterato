@@ -8,7 +8,7 @@ class BatchProcessor
 {
 
     /**
-     * @var array|SchemeInterface[]
+     * @var SchemeInterface[]
      */
     private array $schemes;
 
