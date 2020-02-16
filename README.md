@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/gulch/assets.svg?branch=master)](https://travis-ci.org/gulch/transliterato)
 [![Coverage Status](https://coveralls.io/repos/github/gulch/transliterato/badge.svg?branch=master)](https://coveralls.io/github/gulch/transliterato?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gulch/assets/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gulch/transliterato/?branch=master)
 # gulch/transliterato
 
 ## Install
