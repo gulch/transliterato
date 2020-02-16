@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gulch/assets.svg?branch=master)](https://travis-ci.org/gulch/transliterato)
+
 # gulch/transliterato
 
 ## Install
