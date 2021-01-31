@@ -1,11 +1,15 @@
-language: php
+  language: php
 
 php:
   - 7.4
+  - 8.0
+
+os: linux
+dist: focal
 
 before_script:
   - composer self-update
-  - composer update install
+  - composer install
 
 script:
   - mkdir -p build/logs
